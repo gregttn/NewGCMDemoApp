@@ -32,7 +32,7 @@ public class GCMService {
 		return !DEFAULT_REG_ID.equals(registrationId);
 	}
 	
-	public void registerDevice(final Runnable callback) {
+	public void registerDevice(final AsyncTask<Void, Void, Boolean> registerWithTheServer) {
 		new AsyncTask<Void, Void, String>() {
 
 			@Override
@@ -54,9 +54,9 @@ public class GCMService {
 			@Override
 			protected void onPostExecute(String regId) {
 				Log.i(TAG, "Registration id: " + regId);
-				callback.run();
+				registerWithTheServer.execute();
 			}
-		};
+		}.execute();
 	}
 	
 	public String getRegistrationId() {
