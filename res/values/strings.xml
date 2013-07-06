@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NewGCMDemoApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="waiting">waitinig for notifications...</string>
+    <string name="notification_prefix">"\nNotification: "</string>
+
+</resources>
